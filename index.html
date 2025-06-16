@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,33 +5,60 @@
     <title>Alex Johnson - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Custom styles to override Tailwind defaults */
+        /* Custom styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f3f4f6; /* Tailwind's gray-100 */
-            color: #374151; /* Tailwind's gray-700 */
+            background-color: #f9fafb; /* Tailwind's gray-50 */
+            color: #1e293b; /* Tailwind's gray-800 */
         }
         .accent-color {
-            color: #34d399; /* Tailwind's emerald-400, as an example */
+            color: #22c55e; /* Tailwind's green-500 */
         }
         .project-card:hover {
-            transform: translateY(-4px); /* Slight lift on hover */
+            transform: translateY(-4px);
             transition: transform 0.3s ease;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        .blob {
+            background: #4c1d95; /* indigo-800 */
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(79, 70, 229, 1);
+            margin: 10px;
+            transform: scale(1);
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
 
     <!-- Header -->
-    <header class="bg-indigo-900 text-white py-4 fixed top-0 w-full z-10 shadow-md">
-        <nav class="container mx-auto px-4">
-            <ul class="flex justify-center space-x-8">
-                <li><a href="#home" class="hover:text-emerald-400 transition-colors duration-300 font-semibold">Home</a></li>
-                <li><a href="#about" class="hover:text-emerald-400 transition-colors duration-300 font-semibold">About</a></li>
-                <li><a href="#projects" class="hover:text-emerald-400 transition-colors duration-300 font-semibold">Projects</a></li>
-                <li><a href="#contact" class="hover:text-emerald-400 transition-colors duration-300 font-semibold">Contact</a></li>
+    <header class="bg-indigo-800 text-white py-4 fixed top-0 w-full z-10 shadow-md">
+        <nav class="container mx-auto px-4 flex items-center justify-between">
+            <a href="#home" class="text-xl font-bold hover:text-green-400 transition-colors duration-300">Alex Johnson</a>
+            <ul class="flex space-x-8">
+                <li><a href="#home" class="hover:text-green-400 transition-colors duration-300 font-semibold">Home</a></li>
+                <li><a href="#about" class="hover:text-green-400 transition-colors duration-300 font-semibold">About</a></li>
+                <li><a href="#projects" class="hover:text-green-400 transition-colors duration-300 font-semibold">Projects</a></li>
+                <li><a href="#contact" class="hover:text-green-400 transition-colors duration-300 font-semibold">Contact</a></li>
             </ul>
+            <a href="#contact" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300">Get in Touch</a>
         </nav>
     </header>
 
@@ -40,8 +66,11 @@
     <div class="container mx-auto mt-24 px-4">
 
         <!-- Home Section -->
-        <section id="home" class="py-12">
-            <h1 class="text-4xl font-bold mb-4 text-gray-800">Alex Johnson</h1>
+        <section id="home" class="py-20 text-center">
+            <div class="inline-flex">
+                <h1 class="text-5xl font-bold mb-4 text-gray-800 mr-4">Alex Johnson</h1>
+                <div class="blob"></div>
+            </div>
             <p class="text-lg text-gray-700">Computer Science Student | Full Stack Developer | Technology Enthusiast</p>
         </section>
 
@@ -77,21 +106,21 @@
             <p class="text-gray-700">Email: alex.johnson@example.com</p>
             <p class="text-gray-700">GitHub: <a href="https://github.com/alexjohnson" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">alexjohnson</a></p>
             <p class="text-gray-700">LinkedIn: <a href="https://linkedin.com/in/alexjohnson" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">alexjohnson</a></p>
-             <!-- Contact Form (Example - You'll need backend to process this) -->
+            <!-- Contact Form (Example - You'll need backend to process this) -->
             <form class="mt-8">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                    <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                    <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
                 </div>
                 <div class="mb-6">
                     <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
-                    <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
                 </div>
-                <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send</button>
+                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300">Send</button>
             </form>
         </section>
 
